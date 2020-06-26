@@ -53,6 +53,6 @@ struct PrView: View {
 
 struct PullRequestsWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+        PullRequestsWidgetView(entry: PullRequestsEntry(date: Date(), pullRequests: [PullRequest(title: "Fake Swift 1.0 implementation", body: "Fake description", date: "01-01-1900"), PullRequest(title: "Fake Swift 2.0 implementation", body: "Fake description", date: "01-01-1900"), PullRequest(title: "Fake Swift 3.0 implementation", body: "Fake description", date: "01-01-1900")]))
     }
 }

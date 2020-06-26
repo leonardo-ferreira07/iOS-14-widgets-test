@@ -155,14 +155,11 @@
 		A78BA56A24A5B3A200515080 /* MyWidget */ = {
 			isa = PBXGroup;
 			children = (
-				A78BA58B24A5B67F00515080 /* PullRequestsService.swift */,
-				A78BA56B24A5B3A200515080 /* MyWidget.swift */,
-				A78BA56D24A5B3A200515080 /* MyWidget.intentdefinition */,
-				A78BA56E24A5B3A500515080 /* Assets.xcassets */,
-				A78BA57024A5B3A500515080 /* Info.plist */,
-				A78BA57A24A5B46300515080 /* SwiftRepoPullRequestsTimeline.swift */,
-				A78BA57C24A5B4BC00515080 /* PullRequest.swift */,
-				A78BA59124A5B8A700515080 /* PullRequestsWidgetView.swift */,
+				A78BA59424A5BC6E00515080 /* Services */,
+				A78BA59824A5BC9D00515080 /* Widget */,
+				A78BA59924A5BCB000515080 /* Default */,
+				A78BA59524A5BC7C00515080 /* Models */,
+				A78BA59724A5BC8900515080 /* Views */,
 			);
 			path = MyWidget;
 			sourceTree = "<group>";
@@ -177,6 +174,49 @@
 				A78BA58124A5B66800515080 /* RequestMethod.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		A78BA59424A5BC6E00515080 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A78BA58B24A5B67F00515080 /* PullRequestsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A78BA59524A5BC7C00515080 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A78BA57C24A5B4BC00515080 /* PullRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A78BA59724A5BC8900515080 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A78BA59124A5B8A700515080 /* PullRequestsWidgetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A78BA59824A5BC9D00515080 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				A78BA56B24A5B3A200515080 /* MyWidget.swift */,
+				A78BA57A24A5B46300515080 /* SwiftRepoPullRequestsTimeline.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		A78BA59924A5BCB000515080 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				A78BA56D24A5B3A200515080 /* MyWidget.intentdefinition */,
+				A78BA56E24A5B3A500515080 /* Assets.xcassets */,
+				A78BA57024A5B3A500515080 /* Info.plist */,
+			);
+			path = Default;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,7 +528,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R22VMQT29M;
-				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_FILE = MyWidget/Default/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +549,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R22VMQT29M;
-				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_FILE = MyWidget/Default/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
