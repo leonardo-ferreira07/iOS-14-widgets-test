@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PlaceholderView : View {
     var body: some View {
-        Text("Loading...")
+        PullRequestsWidgetView(entry: PullRequestsEntry(date: Date(), pullRequests: []))
     }
 }
 
@@ -17,14 +17,18 @@ struct PullRequestsWidgetView : View {
     let entry: PullRequestsEntry
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 4) {
             Text("apple/swift's Latest Pull Requests")
                 .font(.system(.title3))
                 .foregroundColor(.black)
-            HStack {
-                PrView(pr: entry.pullRequests[0])
-                PrView(pr: entry.pullRequests[1])
-                PrView(pr: entry.pullRequests[2])
+            HStack(alignment: .center, spacing: 4) {
+                if entry.pullRequests.isEmpty {
+                    Text("Nothing yet")
+                } else if entry.pullRequests.count >= 3 {
+                    PrView(pr: entry.pullRequests[0])
+                    PrView(pr: entry.pullRequests[1])
+                    PrView(pr: entry.pullRequests[2])
+                }
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
