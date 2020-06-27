@@ -9,8 +9,14 @@ import WidgetKit
 import Foundation
 import Combine
 
-struct SwiftRepoPullRequestsTimeline: TimelineProvider {
+class SwiftRepoPullRequestsTimeline: TimelineProvider {
+    // MARK: - Type aliases
+    
     typealias Entry = PullRequestsEntry
+    
+    //MARK: - Properties
+    
+    var disposables = Set<AnyCancellable>()
 }
 
 extension SwiftRepoPullRequestsTimeline {
@@ -22,14 +28,12 @@ extension SwiftRepoPullRequestsTimeline {
     }
     
     func timeline(with context: Context, completion: @escaping (Timeline<PullRequestsEntry>) -> ()) {
-        var disposables = Set<AnyCancellable>()
         let pullRequestsService: PullRequestsService = .init()
         let currentDate = Date()
         let refreshDate = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)!
         var prs: [PullRequest] = []
-        
+
         pullRequestsService.fetchPullRequests(withOwner: "apple", repository: "swift")
-        .receive(on: DispatchQueue.main)
         .sink(receiveCompletion: { value in
             switch value {
             case .failure( let error):
